@@ -10,10 +10,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class FrontController {
 	Logger logger = Logger.getLogger(FrontController.class);
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String home(ModelMap model) {
 		model.addAttribute("message", "Hello Spring MVC Framework!");
+		System.out.println("hiii");
 		return "/home";
+	}
+	
+	
+	@RequestMapping(value = "/editor", method = RequestMethod.GET)
+	public String editor(ModelMap model) {
+		model.addAttribute("message", "Hello Spring MVC Framework!");
+		System.out.println("editor");
+		return "/editor";
 	}
 
 }

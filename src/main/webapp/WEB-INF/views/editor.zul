@@ -1,0 +1,49 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="none" width="100%"
+		style="background-color:#F9F9F9;margin-left:10%;margin-right:10%;"
+		apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.krissoft.companyassist.config.ArticleVM')">
+		
+		<style>
+			.title {
+			font-weight: bold;
+			font-size: 12px;
+			}
+			.demoTbx .z-tab {
+			margin-right: 2px;
+			}
+		</style>
+		<ckeditor id="ed" width="80%" filebrowserImageBrowseUrl="/widgets/input/wysiwyg_editor/img"
+			filebrowserFlashBrowseUrl="/widgets/input/wysiwyg_editor/flash"
+			customConfigurationsPath="/widgets/input/wysiwyg_editor/config.js">
+			<attribute name="onChange"><![CDATA[
+            ta.value = self.value;
+            Clients.evalJavaScript("jq('$cntDiv').html('"+ ed.value.replaceAll("\n", "") +"')");
+        ]]></attribute>
+
+
+		</ckeditor>
+		<separator height="20px" />
+		<tabbox width="560px" sclass="demoTbx">
+			<toolbar>
+				You Can Edit The HTML Directly
+			</toolbar>
+			<tabs>
+				<tab label="Browser Result" />
+				<tab label="HTML Source" />
+			</tabs>
+			<tabpanels>
+				<tabpanel>
+					<div id="cntDiv" style="background: #FEFFEB;" width="540px">
+						<html content="${ed.value}" />
+					</div>
+				</tabpanel>
+				<tabpanel>
+					<textbox id="ta" rows="10" width="540px" value="${ed.value}"
+						onChange="ed.value = ta.value" style="background: #E7F3FF;border: 0 none;" />
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+		<button label="Save" onClick="@command('saveArticle', param=ed.value)"></button>
+	</window>
+</zk>

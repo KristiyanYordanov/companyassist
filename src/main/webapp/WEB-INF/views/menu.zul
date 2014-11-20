@@ -1,0 +1,39 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window>
+<flash src="http://www.zkoss.org/Steps/learn.swf" height="300" width="800"></flash>
+<frozen columns="3"></frozen>
+<timer></timer>
+<space></space>
+	
+		<audio></audio>
+		<bandbox>
+		</bandbox>
+		<calendar></calendar>
+		<checkbox>	</checkbox>
+<combobutton></combobutton>
+<decimalbox></decimalbox>
+<doublespinner></doublespinner>
+
+<toolbarbutton></toolbarbutton>
+		<image src="resources/images/rockandrolla.jpg"></image>
+		
+    Get Started<space bar="true"/>
+    Docs<space bar="true"/>
+    Web Apps<space bar="true"/>
+    Integrations<space bar="true"/>
+    Features<space bar="true"/>
+    Community<space bar="true"/>
+    
+    <intbox></intbox>
+    
+    <imagemap></imagemap>
+    
+    <slider></slider>
+    
+    <scrollview></scrollview>
+
+
+		
+	</window>
+</zk>
